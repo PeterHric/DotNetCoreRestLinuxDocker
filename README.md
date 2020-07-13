@@ -11,17 +11,37 @@ Prerequisites:
 -------------
 Build the app
 -------------
-... To do ....
+Create a new directory and enter it. Clone the application code:  
+__*git clone https://github.com/PeterHric/DotNetCoreRestLinuxDocker*__
+
+Enter the created directory:  
+__*cd DotNetCoreRestLinuxDocker*__
+
+(You can try to run the application: *dotnet run*)
+Publish the app in release mode locally:  
+__*dotnet publish -c Release*__
 
 -----------------
 Dockerize the app
 -----------------
-... To do ....
+Build a DOCKER image from the app:
+(You can examine the Dockerfile that contains instructions for Docker on how to build the image.):  
+__*docker build -t your_preffered_image_name -f Dockerfile .*__
+
+Check if you can see the new created image:  
+__*docker images*__
 
 ---------------------
 Run the app in Docker
 ---------------------
-... To do ....
+Run a new container based on new created image (in this case docker will assing the new container a random name):  
+__*docker run -p 8080:80 your_preffered_image_name*__
+
+Alternatively, you can run in on the background as a daemon: 
+__*docker run -d -p 8080:80 your_preffered_image_name*__
+
+You may select the container an arbitrary name (lowercase): 
+__*docker run -d -p 8080:80 --name=container_name  your_preffered_image_name*__
 
 ------------
 Test the app
