@@ -21,6 +21,9 @@ __*cd DotNetCoreRestLinuxDocker*__
 Publish the app in release mode locally:  
 __*dotnet publish -c Release*__
 
+Try to run the app directly from dotnet (in your PC environment) in the same directory as you published:
+__*dotnet run*__
+
 -----------------
 Dockerize the app
 -----------------
